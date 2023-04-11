@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Hello</title>
+{% endblock %}
+
+{% block body %}
+<div class="alert alert-info alert-dismissible d-flex align-items-center justify-content-around">
+    <div><strong>Info!</strong> Create the strongest password you can to place on the Leaderboard</div>
+    <a href="#" class="close" data-dismiss="alert" aria-label="close" style="text-decoration: none; color:black; font-size:20px">X</a>
+</div>
+
+<div class="container">
+    
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-gear"></i></button>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel"> <i class="fa-solid fa-gear" style="padding-right: 3px;"></i>Settings Tab</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    ...
+  </div>
+</div>
+
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">Word</span>
+        <input type="text" class="form-control">
+        <button class="btn btn-primary" type="button" id="button-addon1"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+</div>
+{% endblock %}

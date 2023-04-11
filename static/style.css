@@ -1,0 +1,12 @@
+nav, .navbar {
+    background-color: #5bc4f9 !important;
+    background-image: none !important;
+}
+
+.navbar-nav {
+    font-size: 20px;
+}
+
+.navbar-nav li {
+    padding: 10px;
+}

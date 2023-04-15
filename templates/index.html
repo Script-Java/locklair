@@ -11,23 +11,36 @@
 </div>
 
 <div class="container">
-    
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-gear"></i></button>
-
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel"> <i class="fa-solid fa-gear" style="padding-right: 3px;"></i>Settings Tab</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    ...
-  </div>
-</div>
-
+    <h1>Password Generator</h1>
+    <p>Enter in a list of words | letters | symbols | numbers and generate your password <strong>HINT:</strong> Do not use family member names and use capital letters</p>
     <div class="input-group">
         <span class="input-group-text" id="basic-addon1">Word</span>
-        <input type="text" class="form-control">
-        <button class="btn btn-primary" type="button" id="button-addon1"><i class="fa-solid fa-paper-plane"></i></button>
+        <input type="text" class="form-control" id="input" required>
+        <button class="btn btn-primary add_btn" type="button" id="add_btn"><i class="fa-solid fa-paper-plane"></i></button>
     </div>
+
+    <ul class="list-group mt-5 mb-5" id="word_container">
+      <li class="list-group-item disabled" aria-disabled="true"><strong>WORD LIST</strong></li>
+      <li class="list-group-item word_list">
+        Ice Cream
+        <button class="btn btn-danger" id="delete_btn">x</button>
+      </li>
+      <li class="list-group-item word_list">
+        @@@@@@@
+        <button class="btn btn-danger" id="delete_btn">x</button>
+      </li>
+      <li class="list-group-item word_list">
+        123456789
+        <button class="btn btn-danger" id="delete_btn">x</button>
+      </li>
+    </ul>
+
+    <div class="input-group">
+      <span class="input-group-text" id="basic-addon1">Password Length</span>
+      <input type="number" id="typeNumber" name="typeNumber" class="form-control"/>
+      <button class="btn btn-primary" type="button" id="button-addon1">Generate</button>
+  </div>
 </div>
+
+<script src="{{url_for('static',filename='main.js')}}"></script>
 {% endblock %}

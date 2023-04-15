@@ -10,3 +10,10 @@ nav, .navbar {
 .navbar-nav li {
     padding: 10px;
 }
+
+.word_list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+}

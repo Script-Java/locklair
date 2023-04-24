@@ -13,26 +13,22 @@
 <div class="container">
     <h1>Password Generator</h1>
     <p>Enter in a list of words | letters | symbols | numbers and generate your password <strong>HINT:</strong> Do not use family member names and use capital letters</p>
-    <div class="input-group">
+    <form action="/add" method="post">
+      <div class="input-group">
         <span class="input-group-text" id="basic-addon1">Word</span>
-        <input type="text" class="form-control" id="input" required>
-        <button class="btn btn-primary add_btn" type="button" id="add_btn"><i class="fa-solid fa-paper-plane"></i></button>
+        <input type="text" class="form-control" id="input" name="word">
+        <button class="btn btn-primary add_btn" type="submit" id="add_btn"><i class="fa-solid fa-paper-plane"></i></button>
     </div>
+    </form>
 
     <ul class="list-group mt-5 mb-5" id="word_container">
       <li class="list-group-item disabled" aria-disabled="true"><strong>WORD LIST</strong></li>
+      {% for word in word_list %}
       <li class="list-group-item word_list">
-        Ice Cream
-        <button class="btn btn-danger" id="delete_btn">x</button>
+        {{word.word}}
+        <a href="/delete/{{word.id}}">Remove</a>
       </li>
-      <li class="list-group-item word_list">
-        @@@@@@@
-        <button class="btn btn-danger" id="delete_btn">x</button>
-      </li>
-      <li class="list-group-item word_list">
-        123456789
-        <button class="btn btn-danger" id="delete_btn">x</button>
-      </li>
+      {%endfor%}
     </ul>
 
     <div class="input-group">
@@ -42,5 +38,4 @@
   </div>
 </div>
 
-<script src="{{url_for('static',filename='main.js')}}"></script>
 {% endblock %}

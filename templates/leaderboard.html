@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Leaderboard</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <ul class="list-group mt-5 mb-5" id="word_container">
+        <li class="list-group-item disabled" aria-disabled="true"><strong>LEADERBOARD</strong></li>
+        {% for i in leader %}
+        <li class="list-group-item word_list">
+            <strong>Name: </strong>{{i.name}}
+            <strong>Password: </strong>{{i.password}}
+            <strong>Score: </strong>{{i.score}}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

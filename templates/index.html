@@ -31,11 +31,15 @@
       {%endfor%}
     </ul>
 
+   <form action="/generate" method="post">
     <div class="input-group">
+      <span class="input-group-text" id="basic-addon1">Username</span>
+      <input type="text" id="typeNumber" name="name" class="form-control"/>
       <span class="input-group-text" id="basic-addon1">Password Length</span>
       <input type="number" id="typeNumber" name="typeNumber" class="form-control"/>
-      <button class="btn btn-primary" type="button" id="button-addon1">Generate</button>
+      <button class="btn btn-primary" type="submit" id="button-addon1">Generate</button>
   </div>
+   </form>
 </div>
 
 {% endblock %}

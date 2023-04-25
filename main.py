@@ -53,9 +53,12 @@ def generate():
 
 @app.route('/leaderboard')
 def leaderboard():
-    leader = Leaderboard.query.all()
+    leader = Leaderboard.query.order_by(Leaderboard.score.desc())
     return render_template("leaderboard.html", leader=leader)
 
+@app.route('/whatsthis')
+def whatsthis():
+    return render_template("whatsthis.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
